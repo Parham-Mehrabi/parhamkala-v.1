@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+    user-select: none
+}
+body{
+direction: rtl;
+    font-size: 16px;
+    background-color: #002c59;
+    text-align: right;
+}
+#m{
+    position: absolute;
+}
+.balai li{
+    float: right;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    list-style: none;
+    font-weight: bold;
+    border-radius: 25%;
+}
+.balai li ul{
+
+display: none;
+}
+.balai li:hover ul{
+    display: block;
+        cursor: pointer;
+}
+
+.balai li{
+    background-color: rgb(15, 200, 182);
+}
+.balai li:hover{
+    background-color: rgb(50, 225, 245);
+        cursor: pointer;
+}
+.balai li ul li:hover{
+    background-color: rgb(17, 245, 245);
+    cursor: pointer;
+}
+#sub li ul {
+    display: none;
+
+}
+#sub li:hover ul{
+    display: block;
+    cursor: pointer;
+
+}
+#pro li {
+    right: 150px;
+    bottom: 150px;
+    position: relative;
+    background-color: #f5f5f5;
+}
+#pro li:hover{
+    border: 3px #3a6880 solid;
+        cursor: pointer;
+    color: black;
+}
+.subcate{
+    overflow: visible;
+}
+.produ_m{
+    color: #0b4f3b;
+    font-weight: bolder;
+
+}.produ_n{
+    color: red;
+    font-weight: bolder;
+}
+ p{
+     line-height: normal;
+ }
+.dd{
+ position: relative;
+ top: 20px;
+ overflow: visible;
+}
+
+a{
+    align-items: center;
+    position: static;
+    top: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.59);
+}
+a:hover{
+    border-bottom: 2px red solid;
+    border-left: 2px red solid;
+        background-color: rgb(255, 255, 255);
+}
+.img_f{
+    border-radius: 25%;
+    position: absolute;
+    width: 151px;
+    height: 151px;
+    top: -20px;
+    left:0;
+}
+#bgs{
+    background-color: rgba(255, 255, 255, 0.85);
+}
+#bgs:hover {
+     background-color: rgb(255, 255, 255);
+}
+#container{
+    position: static;
+}
+#admin_prod{
+    position: absolute;
+    top: 0;
+}
+ /*shooroo e ADD :*/
+
+/* dokme :*/
+.sel{
+    top: 5px;
+    line-height: 25px;
+    margin: 10px;
+    font-weight: bolder;
+    position: relative;
+}
+.sel_c{
+    top: 10px;
+    background-color: cyan;
+    width: 150px;
+    height: 70px;
+    right: calc(100% - 150px);
+    position: relative;
+}
+#tk1{
+display: none;
+}

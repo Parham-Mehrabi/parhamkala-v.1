@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        #form_edit{
+            direction: rtl;
+        }
+        #edit_sub{
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% for p in list %}
+<form id="form_edit" action="{% url 'edit_product' p.4 %}" method="post">
+    {% csrf_token %}
+        <h1>
+id محصول : {{ p.4 }}
+        </h1>
+نام محصول: <input type="text" value="{{ p.0 }}" name="name_mahsool"><br>
+تعداد محصول: <input type="text" value="{{ p.1 }}" name="tedad_mahsool"><br>
+قیمت محصول: <input type="text" value="{{ p.2 }}" name="geymat_mahsool"><br>
+زیردسته بندی محصول: <input type="text" value="{{ p.3 }}" name="daste_mahsool"><br>
+        <input type="submit" value="تایید" id="edit_sub" >
+{% endfor %}
+</form>
+</body>
+</html>

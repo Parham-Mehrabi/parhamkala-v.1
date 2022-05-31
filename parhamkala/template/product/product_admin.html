@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>products-admin</title>
+{#    <link rel="stylesheet" href="{% static 'css/bootstrap.min1.css' %}" >#}
+{#    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" >#}
+{#    <link rel="stylesheet" href="{% static 'css/font.css' %}" >#}
+{#    <link rel="stylesheet" href="{% static 'css/comman.css' %}" >#}
+{#    <link rel="stylesheet" href="{% static 'css/style.1.css' %}" >#}
+    <link rel="stylesheet" href="{% static 'css/products.1.css' %}" >
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/urdak.png' %}">
+
+</head>
+<body>
+<div id="container">
+<div class="sel_c">
+<div class="sel">ویرایش :
+<input type="radio" class="dok_tog" name="pt" id="viraiesh" onchange="viraiesh1()"></div>
+
+<div class="sel">اضافه:
+<input type="radio" class="dok_tog" name="pt" id="ezafe" onchange="ezafe1()">
+</div>
+</div>
+
+<form action="#">
+        <input name="anghezi" type="text" id="ersali">
+        <button type="submit" id="tk1">hide  </button>
+{#        <button type="submit" id="tk2">hide  </button>#}
+</form>
+
+
+
+
+<div id="admin_prod">-
+<ul class="balai">
+{% for i in categories %}
+    <li>{{ i.0 }}{{ i.1 }}<ul id="sub">
+        {% for i2 in subcategories %}
+            {% if i2.1 == i.1 %}
+            <li class="subcate">{{ i2.0 }}<ul id="pro">
+                {% for i3 in product %}
+                    {% if i3.1 == i2.2 %}
+                        {% if i3.3 %}
+                            <li class="produ_m"><div class="dd">
+                         <img src="{% static 'img/urdak.png' %}" alt="product-img" class="img_f">
+                                <p class="dd">
+                                    <span id="bgs">
+                                {{ i3.0}}
+                                <br>قیمت: {{ i3.2 }} <br>
+                                تعداد:{{ i3.3 }}
+</span>
+                                <br>
+                                <br>
+                                <a onclick="del_conf( {{ i3.4 }})">
+                                    &#128465
+                                    </a>
+                        &nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                                <a href="{% url 'edit_product' i3.4 %}">
+                                    &#9998
+                                </a>
+                            </p>
+                                </div>
+                            </li>
+                         {% else %}
+                    <li class="produ_n">
+                        <div class="dd">
+                        <img src="{% static 'img/urdak2.png' %}" alt="product-img" class="img_f">
+                        <p class="dd">
+                        {{ i3.0}}<br>
+                        قیمت:{{ i3.2 }}<br>
+                        ناموجود ! ! !
+                        <br>
+                        <br>
+
+                                <a onclick="del_conf( {{ i3.4 }})">
+                                    &#128465
+                                    </a>
+                        &nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                                <a href="{% url 'edit_product' i3.4 %}">
+                                    &#9998
+                                </a>
+                    </p></div></li>
+                            {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul></li>
+            {% endif %}
+            {% endfor %}
+    </ul>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+<div id="ADD_con">
+
+</div>
+</div>
+
+</body>
+    <script src="{% static 'js/products.2.js' %}"></script>
+<script>
+    function viraiesh1(){
+        var z= document.getElementById('viraiesh')
+
+        if (z.checked){
+                        document.getElementById('ersali').value= 80
+    document.getElementById('tk1').click()
+        }
+    }
+    function ezafe1(){
+        var z2= document.getElementById('ezafe')
+
+        if (z2.checked){
+            document.getElementById('ersali').value= 55
+            document.getElementById('tk1').click()
+        }
+
+    }
+</script>
+
+
+</html>

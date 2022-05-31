@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PK | ثبت نام</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/comman.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <style>
+
+            .reg-error-p{
+                text-align: center;
+                font-weight: bolder;
+                color: red;
+                font-family: inherit;
+            }
+    </style>
+</head>
+<body class="hold-transition register-page">
+        <div class="modal-body">
+        <div class="modal-inner">
+            <div class="row">
+                <!-- <div class="col-md-5">
+                    left
+                </div> -->
+                <div class="col-md-12">
+                    <div class="modal-inner-box">
+                        <div class="autho-model-header text-center">
+{#                            <a href="javascript:void(0);"><img src="assets/images/index1/big_logo.png" alt="logo" class="img-fluid"></a>#}
+{#                            <p class="autho-model-sttl">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>#}
+                            <h2 class="autho-model-ttl">ثبت نام </h2>
+                        </div>
+
+                        <div class="autho-model-filed">
+                                      <form action="{% url "register2" %}" method="post">
+
+          {% csrf_token %}
+
+                               {{form}}
+<div class="col-md-12">
+                                        <div class="">
+                                            <button type="submit" class="e-btn">ثبت نام</button>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/adminlte.min.js' %}"></script>
+</body>
+</html>

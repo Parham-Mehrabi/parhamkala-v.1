@@ -1,0 +1,105 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>parhamkala | Login</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/urdak.png' %}">
+
+   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+   <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" >
+   <link rel="stylesheet" href="{% static 'css/font.css' %}" >
+   <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" >
+   <link rel="stylesheet" href="{% static 'css/comman.css' %}" >
+   <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <style>
+        .e-checkbox-input:checked + .e-checkbox:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 6px;
+            right: 6px;
+            width: 5px;
+            height: 9px;
+            border: solid #65bcc1;
+            border-width: 2px 0px 0px 2px;
+            transform: rotate(-130deg);
+        }
+{#            unselectable#}
+        .nagir{
+                -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+    </style>
+</head>
+<body class="hold-transition login-page">
+        <div class="modal-body">
+        <div class="modal-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-inner-box">
+                        <div class="autho-model-header text-center">
+{#                            <a href="javascript:void(0);"><img src="assets/images/index1/big_logo.png" alt="logo" class="img-fluid"></a>#}
+{#                            <p class="autho-model-sttl">ه لازم است.</p>#}
+                            <h2 class="autho-model-ttl">ورود </h2>
+                        </div>
+                                  <form action="{% url 'login' %}" method="post">
+                                    {% csrf_token %}
+{#                            <form>#}
+                                <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="e-form-field mb-20">
+                                                <label for="usernamee" class="nagir">نام کاربری</label>
+                                                <input type="text" class="e-field-inner" name="username" id="usernamee">
+                                            </div></div>
+                                    <div class="col-md-12">
+                                        <div class="e-form-field mb-20">
+                                            <label for="passww" class="nagir"> رمز عبور </label>
+                                            <input type="password" class="e-field-inner" name="passw" id="passww">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="e-form-field mb-20">
+                                            <ul class="e-rememberforgot-list">
+                                                <li>
+                                                    <div class="e-checkbox-wrap">
+                                                        <input class="e-checkbox-input" type="checkbox" id="remember_me" >
+                                                        <label for="remember_me" class="e-checkbox nagir" >مرا به خاطر بسپار </label>
+                                                    </div>
+                                                </li>
+                                                <li><a href="#" class="e-comn-link">فراموشی رمز عبور؟ </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <button type="submit" class="e-btn"> ورود</button>
+                                        </div>
+
+                                              {% if error %}
+          <hr>
+      <h2 style="direction: ltr">{{ error }}</h2>
+      {% endif %}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/adminlte.min.js' %}"></script>
+</body>
+</html>
